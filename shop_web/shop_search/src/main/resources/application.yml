@@ -1,0 +1,15 @@
+
+spring:
+  data:
+    solr:
+      host: http://192.168.6.128:8080/solr
+server:
+  port: 8082
+dubbo:
+  application:
+    name: shop_web
+  registry:
+    address: zookeeper://192.168.6.128:2181
+  consumer:
+    timeout: 20000
+    check: false

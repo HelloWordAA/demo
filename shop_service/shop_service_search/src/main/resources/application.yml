@@ -1,0 +1,25 @@
+
+dubbo:
+  application:
+    name: search_service
+  registry:
+    address: zookeeper://192.168.6.128:2181
+    #\u534F\u8BAE
+  protocol:
+    #\u6BCF\u4E2A\u670D\u52A1\u90FD\u8981\u5360\u7528\u4E00\u4E2A\u7AEF\u53E3
+    port: 20881
+    name: dubbo
+  provider:
+    timeout: 20000
+server:
+  port: 9091
+spring:
+  data:
+    solr:
+      host: http://192.168.6.128:8080/solr
+  rabbitmq:
+    host: 192.168.6.128
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: /admin

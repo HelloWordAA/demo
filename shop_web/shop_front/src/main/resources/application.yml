@@ -1,0 +1,6 @@
+#thymeleaf\u7684\u7F13\u5B58\u8BBE\u4E3Afalse
+spring:
+  thymeleaf:
+    cache: false
+server:
+  port: 8081
