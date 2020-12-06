@@ -26,7 +26,7 @@ public class SearchService implements ISearchService {
     public List<Goods> searchByKeyWord(String keyWord) {
         System.out.println("搜索服务"+keyWord);
         SolrQuery solrQuery = new SolrQuery();
-        if(keyWord==null || keyWord==""){//如果keyword为空搜索全部
+        if(keyWord==null || keyWord.equals("")){//如果keyword为空搜索全部
             solrQuery.setQuery("*:*");  //后面不是*前面也不能是*
         }else{
             //设置搜索关键字为gname，或ginfo里面的

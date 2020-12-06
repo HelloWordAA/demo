@@ -12,6 +12,7 @@
     <script type="text/javascript" src="js/jquery.js" ></script>
     <script type="text/javascript" src="js/topNav.js" ></script>
     <script type="text/javascript" src="js/shop_goods.js" ></script>
+    <script type="text/javascript" src="http://localhost:8085/js/shopcart.js" ></script>
 </head>
 <body>
 <!-- Header  -wll-2013/03/24 -->
@@ -54,9 +55,10 @@
                     </li>
 
                     <li>
+                    <li>
                         <div class="topNav_menu">
-                            <a href="#" class="topNavHover">购物车<b>0</b>种商品<i></i></a>
-                            <div class="topNav_menu_bd" style="display:none;">
+                            <a href="http://localhost:8085/cart/cartlist" class="topNavHover">购物车<b id="cart_number_id">0</b>种商品<i></i></a>
+                            <div class="topNav_menu_bd" style="display:none; width: 200px; height: 200px" id="cart_id">
                                 <!--
                                 <ul>
                                   <li><a title="已售出的商品" target="_top" href="#">已售出的商品</a></li>
@@ -598,13 +600,35 @@
                 </li>
                 <li style="padding:20px 0;">
                     <label>&nbsp;</label>
-                    <span><a href="" class="goods_sub goods_sub_gou" >加入购物车</a></span>
+                    <span><a href="javascript:addcart()" class="goods_sub goods_sub_gou" >加入购物车</a></span>
                 </li>
             </ul>
         </div>
     </div>
-    <!-- 商品展示 End -->
 
+    <script>
+        function addcart(){
+            var gid=${goods.id};
+            var gnumber=$("#good_nums").val()
+            location.href = "http://localhost:8085/cart/add?gid=" + gid + "&gnumber=" + gnumber;
+
+
+            <#--var params={-->
+                <#--"gid":${goods.id},-->
+                <#--"gnumber":$("#good_nums").val()-->
+            <#--}-->
+//            $.ajax({
+//                url:"http://localhost:8085/cart/add",
+//                success:function(data){
+//                    alert("返回值"+data);
+//                },
+//                dataType:"jsonp",
+//                jsonpCallback:"add"
+//            });
+        }
+    </script>
+
+    <!-- 商品展示 End -->
     <div class="clear mt15"></div>
     <!-- Goods Left -->
     <div class="shop_bd_list_left clearfix">
